@@ -52,14 +52,26 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
   </distributionManagement>
 
   <repositories>
+
+    <!--<repository>-->
+      <!--<id>${distMgmtSnapshotsId}</id>-->
+      <!--<name>${distMgmtSnapshotsName}</name>-->
+      <!--<url>${distMgmtSnapshotsUrl}</url>-->
+    <!--</repository>-->
+    <!--<repository>-->
+      <!--<id>repository.jboss.org</id>-->
+      <!--<url>https://repository.jboss.org/nexus/content/groups/public/</url>-->
+      <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+      <!--</snapshots>-->
+    <!--</repository>-->
     <repository>
-      <id>${distMgmtSnapshotsId}</id>
-      <name>${distMgmtSnapshotsName}</name>
-      <url>${distMgmtSnapshotsUrl}</url>
-    </repository>
-    <repository>
-      <id>repository.jboss.org</id>
-      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
