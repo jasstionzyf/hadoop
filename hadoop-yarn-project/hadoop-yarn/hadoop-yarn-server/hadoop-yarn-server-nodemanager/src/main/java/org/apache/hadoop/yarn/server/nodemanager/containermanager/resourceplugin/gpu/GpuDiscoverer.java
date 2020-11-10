@@ -289,15 +289,15 @@ public class GpuDiscoverer {
     } else {
       binaryPath = configuredBinaryFile;
       // If path exists but file name is incorrect don't execute the file
-      String fileName = binaryPath.getName();
-      if (DEFAULT_BINARY_NAME.equals(fileName)) {
-        String msg = String.format("Please check the configuration value of"
-             +" %s. It should point to an %s binary.",
-             YarnConfiguration.NM_GPU_PATH_TO_EXEC,
-             DEFAULT_BINARY_NAME);
-        throwIfNecessary(new YarnException(msg), config);
-        LOG.warn(msg);
-      }
+//      String fileName = binaryPath.getName();
+//      if (DEFAULT_BINARY_NAME.equals(fileName)) {
+//        String msg = String.format("Please check the configuration value of"
+//             +" %s. It should point to an %s binary.",
+//             YarnConfiguration.NM_GPU_PATH_TO_EXEC,
+//             DEFAULT_BINARY_NAME);
+//        throwIfNecessary(new YarnException(msg), config);
+//        LOG.warn(msg);
+//      }
     }
 
     pathOfGpuBinary = binaryPath.getAbsolutePath();

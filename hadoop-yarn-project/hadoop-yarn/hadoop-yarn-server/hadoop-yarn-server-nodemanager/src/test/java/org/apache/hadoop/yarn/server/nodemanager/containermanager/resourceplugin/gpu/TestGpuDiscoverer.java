@@ -158,8 +158,8 @@ public class TestGpuDiscoverer {
   @Test
   public void testLinuxGpuResourceDiscoverPluginConfig() throws Exception {
     // Only run this on demand.
-    Assume.assumeTrue(Boolean.valueOf(
-        System.getProperty("RunLinuxGpuResourceDiscoverPluginConfigTest")));
+//    Assume.assumeTrue(Boolean.valueOf(
+//        System.getProperty("RunLinuxGpuResourceDiscoverPluginConfigTest")));
 
     // test case 1, check default setting.
     Configuration conf = new Configuration(false);

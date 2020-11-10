@@ -120,7 +120,25 @@ public class TestGpuResourceHandler {
     Configuration conf = new Configuration();
     Context nmContext = createMockNmContext(conf);
 
-    gpuDiscoverer = new GpuDiscoverer();
+//    gpuDiscoverer = new GpuDiscoverer();
+    gpuDiscoverer = mock(GpuDiscoverer.class);
+    GpuDiscoverer mockDiscoverer = mock(GpuDiscoverer.class);
+    PerGpuDeviceInformation perGpuDeviceInformation1=new PerGpuDeviceInformation();
+    perGpuDeviceInformation1.setMinorNumber(0);
+    PerGpuDeviceInformation perGpuDeviceInformation2=new PerGpuDeviceInformation();
+    perGpuDeviceInformation2.setMinorNumber(1);
+    PerGpuDeviceInformation perGpuDeviceInformation3=new PerGpuDeviceInformation();
+    perGpuDeviceInformation3.setMinorNumber(2);
+
+    List<PerGpuDeviceInformation> gpus= Lists.newArrayList(perGpuDeviceInformation1,perGpuDeviceInformation2,perGpuDeviceInformation3);
+    GpuDeviceInformation gpuDeviceInformation=new GpuDeviceInformation();
+    gpuDeviceInformation.setGpus(gpus);
+
+
+    when(gpuDiscoverer.getGpuDeviceInformation()).thenReturn(gpuDeviceInformation);
+
+
+
     gpuResourceHandler = new GpuResourceHandlerImpl(nmContext,
         mockCGroupsHandler, mockPrivilegedExecutor, gpuDiscoverer);
   }
